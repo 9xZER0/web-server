@@ -33,6 +33,16 @@ def forgot():
 def logout():
     return '<h1> Logout </h1>'
 
+# Dashboard
+@app.route("/dashboard")
+def dashboard():
+    return '<h1> Hello User </h1>'
+
+# Profile
+@app.route("/profile")
+def profile():
+    return '<h1> Hello User Profile </h1>'
+
 # Main function
 if __name__ == '__main__':
     app.run(host = "0.0.0.0", debug = True, port = 8080)
