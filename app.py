@@ -1,5 +1,5 @@
-from flask import Flask, render_template, flash, redirect
-import requests
+from flask import Flask, render_template, flash, redirect # type: ignore
+import requests # type: ignore
 
 app = Flask(__name__)
 app.secret_key = "noSystemIsSafe"
@@ -11,8 +11,7 @@ def home():
     response = requests.get(f"{API_URL}/")
     response.raise_for_status()
     message = response.json()
-    # return message
-    return f"HELLO {message['messages']}"
+    return f"HELLO <br> {message['messages']} <br>"
 
 # Login page
 # @app.route("/login", methods = ['GET', 'POST'])
