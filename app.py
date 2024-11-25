@@ -12,13 +12,22 @@ def home():
 def login():
     if request.method == 'GET':
         return render_template('login.html')
-    return '<h1> Trying To Login.<br> You naughty </h1>'
+    
+    _email = request.form['email']
+    _passWord = request.form['password']
+    
+    return f'<h1> Trying To Login {_email} . {_passWord} </h1>'
 
 # Signup page
 @app.route("/signup", methods = ['GET', 'POST'])
 def signup():
     if request.method == 'GET':
         return render_template('signup.html')
+    
+    _email = request.form['email']
+    _userName = request.form['username']
+    _passWord = request.form['password']
+
     return '<h1> Trying To Signup.<br> You naughty </h1>'
 
 # Forgot password page
@@ -26,6 +35,8 @@ def signup():
 def forgot():
     if request.method == 'GET':
         return render_template('forgot.html')
+    
+    _email = request.form['email']
     return '<h1> Trying To reset password.<br> You naughty </h1>'
 
 # Logout page
