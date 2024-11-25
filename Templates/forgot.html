@@ -72,11 +72,31 @@
         a:hover {
             text-decoration: underline;
         }
+
+        .flashed-messages {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+
+        .flashed-messages.success {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+
+        .flashed-messages.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
     </style>
 </head>
 <body>
     <div class="forgot-container">
         <h1>Forgot Password</h1>
+        
         <form method="post">
             <div class="form-group">
                 <label for="email">Enter your email</label>
@@ -84,6 +104,7 @@
             </div>
             <button type="submit">Reset Password</button>
         </form>
+        
         <a href="/login">Back to Login</a>
     </div>
 </body>
